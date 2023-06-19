@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD NODEJS MYSQL</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="navbar-brand m-3">BICICLETAS DE MONTAÑA FAVORITAS</a>
+        <div>
+            <a href="./carretera" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">CARRETERA</mark></a>
+            <a href="https://www.marca.com/ciclismo.html" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">ÚLTIMAS NOTICIAS</mark></a> 
+            <a href="https://tuvalum.com" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">COMPRA-VENTA</mark></a>
+            <a href="https://www.komoot.com/es-es/plan/@41.3870000,2.1701000,9.000z?sport=e_mtb" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">PLANIFICADOR DE RUTAS</mark></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="d-flex justify-content-around mt-5">
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nº</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Precio</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (data) { %>
+                            <% for (var i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td><%= (i + 1) %></td>
+                                    <td><%= data[i].marca %></td>
+                                    <td><%= data[i].modelo %></td>
+                                    <td><%= data[i].precio %>€</td>
+                                    <td>
+                                        <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                                        <a href="/update/<%= data[i].id %>" class="btn btn-info">Update</a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="post">
+                            <div class="form-group">
+                                <input type="text" name="marca" placeholder="Marca" class="form-control ">
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" name="modelo" placeholder="Modelo" class="form-control">
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" name="precio" placeholder="Precio" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">Guardar Bicicleta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center">
+                <iframe class="rounded" src="https://www.youtube.com/embed/Jk7rliZpuSs" width="560" height="315"></iframe>
+            </div>        
+        </div>
+    </div>
+    <div class="d-flex justify-content-around mt-5">
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://asset.scott-sports.com/fit-in/2000x2000/286/286258A_1795756_png_zoom_1.jpg?signature=3a118ccaf99166f95c7549940ef329f97c08c8204818779e05b095cc0b687b2d">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center">SCOTT SPARK RC SL</h6>
+              <a href="https://www.scott-sports.com/es/es/products/bike-bikes-mountain-crosscountry?q=%3A%3AModel%3ASpark+RC&text=#" target="_blank" class="btn btn-primary d-flex justify-content-center">VER BICICLETA</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://www.paulscycles.co.uk/images/Nukeproof-Reactor-290-Elite-Carbon-Bike-SLX-Yellow-02.jpg">
+            <div class="card-body">
+                <h6 class="card-title d-flex justify-content-center">NUKEPROOF REACTOR 290</h6>
+              <a href="https://www.paulscycles.co.uk/bikes/mountain-bikes/nukeproof-reactor-290-carbon-elite-mountain-bike-factory-yellow__9725" target="_blank" class="btn btn-primary d-flex justify-content-center">VER BICICLETA</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://cdn.westbrookcycles.co.uk/original/1625651766-46905900.jpg">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center">CANNONDALE SCALPEL</h6>
+              <a href="https://www.westbrookcycles.co.uk/scalpel_carbon_3_29_full_suspension_mountain_bike_%282021%29-6291" target="_blank" class="btn btn-primary d-flex justify-content-center">VER BICICLETA</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://d3n8mmvj9ns1ml.cloudfront.net/products/18935/zm_20191003-120115.jpg">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center">SPECIALIZED TURBO </h6>
+              <a href="https://www.lordgunbicycles.es/specialized-turbo-kenevo-expert-bicicleta" target="_blank" class="btn btn-primary d-flex justify-content-center">VER BICICLETA</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://eriksbikeshop.vtexassets.com/arquivos/ids/337785/2023FourstrokeLTLTDFullSuspensionMountainBike.jpg?v=638070654093270000">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center m-1">BMC FOURSTROKE LT LTD</h6>
+              <a href="https://www.eriksbikeshop.com/bmc-2023-fourstroke-lt-ltd-full-suspension-mountain-bike-pr5a16913/p" target="_blank" class="btn btn-primary d-flex justify-content-center">VER BICICLETA</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://asset.scott-sports.com/291/291167A_1.png?signature=973288627fbdb60cbb2dec17de81a0c29aa0730d02efac8ffda9819201e2a84d">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center">BOLD UNPLUGGED PRO BIKE</h6>
+              <a href="https://www.boldcycles.com/pe/es/product/bold-unplugged-pro-bike" target="_blank" class="btn btn-primary d-flex justify-content-center">VER BICICLETA</a>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="text-center text-lg-start position-absolute bottom-0 start-50 translate-middle-x">
+    <div class="text-center p-3 ">
+      © 2023 Copyright
+    </div>
+</footer>
+</html>

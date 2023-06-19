@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD NODEJS MYSQL</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="navbar-brand m-3">BICICLETAS DE MONTAÑA FAVORITAS</a>
+        <div>
+            <a href="https://www.marca.com/ciclismo.html" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">ÚLTIMAS NOTICIAS</mark></a>
+            <a href="https://tuvalum.com" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">COMPRA-VENTA</mark></a>
+            <a href="https://www.komoot.com/es-es/plan/@41.3870000,2.1701000,9.000z?sport=e_mtb" target="_blank" class="navbar-brand m-3"><mark class="text-warning bg-dark rounded">PLANIFICADOR DE RUTAS</mark></a>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body d-flex justify-content-center">
+                        <form action="/update/<%= data.id %>" method="post">
+                            <div class="form-group">
+                                <input type="text" name="marca" value="<%= data.marca %>" class="form-control" placeholder="Marca">
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" name="modelo" value="<%= data.modelo %>"class="form-control" placeholder="Modelo">
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" name="precio" value="<%= data.precio %>" class="form-control" placeholder="Precio">
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">Guardar Bicicleta Editada</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around mt-5">
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://asset.scott-sports.com/fit-in/2000x2000/288/288729_1795702_png_zoom_7.jpg?signature=15b2811702179f7646d47c41720c4b8e70d972c43a30f666c3cd6f182c637f50">
+            <div class="card-body">
+                <h6 class="card-title d-flex justify-content-center">SCOTT RAMSON 900 TUNED</h6>
+                <a href="https://www.scott-sports.com/es/es/product/scott-ransom-900-tuned-hmx-frame-fork" target="_blank" class="btn btn-primary d-flex justify-content-center">VER CUADRO</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://asset.scott-sports.com/fit-in/2000x2000/291/291174.png?signature=f0b4b63ccab27cd900f2dfa6657509e056cd5379f81175e84d52682589037ef7">
+            <div class="card-body">
+                <h6 class="card-title d-flex justify-content-center">BOLD UNPLUGGED GREY</h6>
+                <a href="https://www.boldcycles.com/es/es/product/bold-unplugged-grey-frame-set" target="_blank" class="btn btn-primary d-flex justify-content-center">VER CUADRO</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://www.silverfish-uk.com/netalogue/zoom/ycf22140tl-smke_2.jpg">
+            <div class="card-body">
+                <h6 class="card-title d-flex justify-content-center">YETI CYCLES SB130 T-SERIES</h6>
+                <a href="https://www.westbrookcycles.co.uk/scalpel_carbon_3_29_full_suspension_mountain_bike_%282021%29-6291" target="_blank" class="btn btn-primary d-flex justify-content-center">VER CUADRO</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://p.vitalmtb.com/photos/products/23523/photos/77450/original_2020_2021_Santa_Cruz_Bronson_CC_Red_Tide_Yellow.jpeg?VersionId=vk17pNov5FisqYdMWzTgfKG7eOXIWB3L">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center">SANTA CRUZ BRONSON CC</h6>
+              <a href="https://www.pamso.pl/produkty-wszystkie/cuadro-de-mountain-bike-santa-cruz-bronson-cc-27-ee-15300885" target="_blank" class="btn btn-primary d-flex justify-content-center">VER CUADRO</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://www.carnivalbikes.cl/sitio-web/wp-content/uploads/2020/06/MKM1945.jpg">
+            <div class="card-body">
+              <h6 class="card-title d-flex justify-content-center m-1">MONDRAKER SUMMUM R</h6>
+              <a href="https://www.pamso.pl/cuadro-de-dh-mondraker-summum-r-mx-2023-ee-2116164" target="_blank" class="btn btn-primary d-flex justify-content-center">VER CUADRO</a>
+            </div>
+        </div>
+        <div class="card h-25 p-2" style="width: 18rem;">
+            <img class="card-img-top rounded" src="https://taddeistore.com/wp-content/uploads/2021/11/70322-00_EPIC-SW-FRMSET-CMLNFLD-BLK_HERO.jpg">
+            <div class="card-body">
+                <h6 class="card-title d-flex justify-content-center">SPECIALIZED S-WORKS EPIC</h6>
+                <a href="https://www.pamso.pl/produkty-wszystkie/comprar-cuadro-mtb-specialized-s-works-epic-evo-2022-ee-30166500" target="_blank" class="btn btn-primary d-flex justify-content-center">VER CUADRO</a>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="text-center text-lg-start position-absolute bottom-0 start-50 translate-middle-x">
+    <div class="text-center p-3">
+      © 2023 Copyright
+    </div>
+</footer>
+</html>
